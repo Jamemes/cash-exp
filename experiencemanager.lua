@@ -4,7 +4,7 @@ end
 
 local data = ExperienceManager.get_xp_dissected
 function ExperienceManager:get_xp_dissected(success, num_winners, personal_win)
-	local xp, tbl = data(self, success, num_winners, personal_win)
+	local _, tbl = data(self, success, num_winners, personal_win)
 	local cash_exp = managers.job:stage_success() and managers.job:on_last_stage() and offshore_rate_exp(managers.money:get_potential_payout_from_current_stage()) or 0
 	for id, value in pairs(tbl) do
 		if type(value) == "number" and id ~= "stage_xp" then
@@ -22,7 +22,7 @@ function ExperienceManager:get_contract_xp_by_stars(job_id, job_stars, risk_star
 	local total_payout_min, base_payout, risk_payout = managers.money:get_contract_money_by_stars(job_stars, risk_stars, job_days, job_id)
 	local _, tbl = data(self, job_id, job_stars, risk_stars, professional, job_days, extra_params)
 
-	for id, value in pairs(tbl) do
+	for id, _ in pairs(tbl) do
 		tbl[id] = 0
 	end
 
