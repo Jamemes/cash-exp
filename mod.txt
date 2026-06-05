@@ -8,7 +8,7 @@
 	],
 	"updates" : [
 		{
-			"identifier" : "cash=exp",
+			"identifier" : "main",
 			"host": {
 				"meta": "https://raw.githubusercontent.com/Jamemes/cash-exp/meta/meta.json"
 			}
