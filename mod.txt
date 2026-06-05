@@ -10,7 +10,7 @@
 		{
 			"identifier" : "cash=exp",
 			"host": {
-				"meta": "https://raw.githubusercontent.com/Jamemes/cash-=-exp/meta/meta.json"
+				"meta": "https://raw.githubusercontent.com/Jamemes/cash-exp/meta/meta.json"
 			}
 		}
 	]
