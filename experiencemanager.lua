@@ -5,7 +5,7 @@ end
 local data = ExperienceManager.get_xp_dissected
 function ExperienceManager:get_xp_dissected(success, num_winners, personal_win)
 	local _, tbl = data(self, success, num_winners, personal_win)
-	local cash_exp = tbl.job_xp ~= 0 and offshore_rate_exp(managers.money:get_potential_payout_from_current_stage()) or 0
+	local cash_exp = game_state_machine:current_state_name() ~= "gameoverscreen" and managers.job:on_last_stage() and offshore_rate_exp(managers.money:get_potential_payout_from_current_stage()) or 0
 	for id, value in pairs(tbl) do
 		if type(value) == "number" and id ~= "stage_xp" then
 			tbl[id] = 0
